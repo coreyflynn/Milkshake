@@ -7,7 +7,7 @@ def createSignature(numBlocks=10,offset=0):
     for i in range(numBlocks):
         bpy.ops.mesh.primitive_cube_add()
         sb = bpy.context.object
-        scale = random.random() * 2
+        scale = random.random() * 2 + 0.1
         sb.scale.z = scale
         if random.random() > 0.5:
             sb.location.z = -scale
@@ -22,5 +22,5 @@ def createSignature(numBlocks=10,offset=0):
         sb.select = True
     bpy.ops.object.join()
 
-for i in range(10):
-    createSignature(offset=i)
+for i in range(50):
+    createSignature(numBlocks = 20, offset = i)
